@@ -31,4 +31,9 @@ public class DialogueManager {
         app.fill(255);
         app.text(text, x, y + 40, app.width - 40, app.height - 100);
     }
+    
+    public void loadCharacterImage(){
+        
+    }
+    
 }

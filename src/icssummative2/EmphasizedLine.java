@@ -17,8 +17,11 @@ public class EmphasizedLine extends DialogueManager {
     @Override
     public void display(PApplet app, int x, int y) {
         app.fill(255, 0, 0); // red speaker name
-        app.text(getSpeaker().toUpperCase(), x, y);
+        app.text(getSpeaker(), x, y);
         app.fill(255);
-        app.text(getText().toUpperCase(), x, y + 40, app.width - 40, app.height - 100);
+        app.text(getText(), x, y + 40, app.width - 40, app.height - 100);
     }
+    
+    
+    
 }
