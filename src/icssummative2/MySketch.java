@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package icssummative2;
 
-/**
- *
- * @author Stikb
- */
-public class MySketch {
-    
+import processing.core.PApplet;
+
+public class MySketch extends PApplet {
+    public void settings() {
+        size(600, 400);
+    }
+
+    public void setup() {
+        background(0);
+    }
+
+    public void draw() {
+        ellipse(mouseX, mouseY, 50, 50);
+    }
+
+    public static void main(String[] args) {
+        PApplet.main("icssummative2.MySketch");
+    }
 }

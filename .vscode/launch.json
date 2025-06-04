@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run ICSSummative2",
+      "request": "launch",
+      "mainClass": "icssummative2.ICSSummative2",
+      "classPaths": [
+        "bin",
+        "lib/core.jar"
+      ]
+    }
+  ]
+}
