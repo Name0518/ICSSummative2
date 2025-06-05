@@ -4,7 +4,6 @@
  */
 package icssummative2;
 import processing.core.PApplet;
-import java.util.*;
 /**
  *
  * @author Stikb
@@ -30,10 +29,5 @@ public class DialogueManager {
         app.text(speaker, x, y);
         app.fill(255);
         app.text(text, x, y + 40, app.width - 40, app.height - 100);
-    }
-    
-    public void loadCharacterImage(){
-        
-    }
-    
+    } 
 }

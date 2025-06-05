@@ -21,7 +21,4 @@ public class EmphasizedLine extends DialogueManager {
         app.fill(255);
         app.text(getText(), x, y + 40, app.width - 40, app.height - 100);
     }
-    
-    
-    
 }
