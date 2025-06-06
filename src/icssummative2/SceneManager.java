@@ -18,10 +18,10 @@ public class SceneManager {
         FILE_PATH = filePath;
         BACKGROUND_PATH = backgroundPath;
     }
-
-    public SceneManager(String filePath) {
-        FILE_PATH = filePath;
-        BACKGROUND_PATH = "blankScreen.png";
+    
+    public SceneManager(String backgroundPath) {
+        FILE_PATH = "blank.txt";
+        BACKGROUND_PATH = backgroundPath;
     }
 
     public DialogueManager getCurrentDialogue() {
