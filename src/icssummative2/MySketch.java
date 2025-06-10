@@ -20,6 +20,7 @@ public class MySketch extends PApplet {
         scenes.add(new SceneManager("dialogue/scene1.txt", "scenes/pavillion.png"));
         scenes.add(new SceneManager("dialogue/scene2.txt", "scenes/throneroom.png"));
         scenes.add(new SceneManager("dialogue/scene3.txt", "scenes/courtyard.png"));
+        scenes.add(new CombatScene("scenes/courtyardbirdseye.png"));
         currentSceneIndex = 0;
         scenes.get(currentSceneIndex).setUpScene(this); 
         textSize(24);
@@ -30,7 +31,10 @@ public class MySketch extends PApplet {
     }
 
     public void mousePressed() {
-         SceneManager currentScene = scenes.get(currentSceneIndex);
+        SceneManager currentScene = scenes.get(currentSceneIndex);
+        if (currentScene instanceof CombatScene) {
+        ((CombatScene) currentScene).mousePressed(); // forward click
+    }
         if (currentScene.isFinished()) {
             // Move to next scene
             currentSceneIndex++;
@@ -45,5 +49,11 @@ public class MySketch extends PApplet {
             currentScene.nextDialogue();
         }
     }
-    }
+}
+   
+    
+
+    
+
+   
 

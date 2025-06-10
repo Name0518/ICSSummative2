@@ -20,7 +20,7 @@ public class SceneManager {
     }
     
     public SceneManager(String backgroundPath) {
-        FILE_PATH = "blank.txt";
+        FILE_PATH = "scenes/blank.txt";
         BACKGROUND_PATH = backgroundPath;
     }
 
