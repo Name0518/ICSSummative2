@@ -2,6 +2,7 @@ package icssummative2;
 
 import processing.core.PApplet;
 import processing.core.PImage;
+import java.util.ArrayList;
 
 public class PlayableCharacter {
     private int x, y;
@@ -49,5 +50,23 @@ public class PlayableCharacter {
         return y; 
     }
     
+    public int getHealth(){
+        return health;
+    }
+    
+    public void attackEnemies(ArrayList<Enemy> enemies) {
+    int attackRange = 50; 
+    for (Enemy enemy : enemies) {
+        if (enemy.isAlive()) {
+            float dx = enemy.getX() - this.x;
+            float dy = enemy.getY() - this.y;
+            float distance = (float) Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < attackRange) {
+                enemy.takeDamage(20); 
+            }
+        }
+    }
+}
     
 }

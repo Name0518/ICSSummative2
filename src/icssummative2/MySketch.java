@@ -33,7 +33,7 @@ public class MySketch extends PApplet {
     public void mousePressed() {
         SceneManager currentScene = scenes.get(currentSceneIndex);
         if (currentScene instanceof CombatScene) {
-        ((CombatScene) currentScene).mousePressed(); // forward click
+            ((CombatScene) currentScene).mousePressed();
     }
         if (currentScene.isFinished()) {
             // Move to next scene
@@ -50,7 +50,6 @@ public class MySketch extends PApplet {
         }
     }
 }
-   
     
 
     

@@ -79,10 +79,6 @@ public class SceneManager {
     }
     
     public boolean isFinished() {
-    return currentIndex >= dialogueLines.size();
-}
-    
-
-
-    
+        return currentIndex >= dialogueLines.size();
+    }
 }
