@@ -71,7 +71,7 @@ public class SceneManager {
             sketch.fill(0, 0, 0, 180);
             sketch.noStroke();
             sketch.rect(0, sketch.height - 240, sketch.width, 240);
-            current.display(sketch, 210, 600);
+            showDialogue(current, sketch);
         } else {
             sketch.fill(255);
             sketch.text(" ", 20, sketch.height / 2);
@@ -80,5 +80,9 @@ public class SceneManager {
     
     public boolean isFinished() {
         return currentIndex >= dialogueLines.size();
+    }
+    
+    public void showDialogue(DialogueManager line, PApplet sketch){
+        line.display(sketch, 210, 600);
     }
 }
