@@ -36,7 +36,6 @@ public class CombatScene extends SceneManager {
         isGameOver = false;
         backgroundImg = this.sketch.loadImage(backgroundPath);
         character = new PlayableCharacter(100, 100, 64, 64, "characters/Lu Bu.png",sketch);
-        // Add enemies (x,y,
         enemies.add(new Enemy(800, 300, 64, 64, 100, 10, 1.0f, 100, "characters/goomba.png", sketch));
         enemies.add(new Enemy(600, 500, 64, 64, 100, 5, 0.5f, 80, "characters/goomba.png", sketch));
     }
