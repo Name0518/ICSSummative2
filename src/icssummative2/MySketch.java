@@ -17,10 +17,16 @@ public class MySketch extends PApplet {
 
     public void setup() {
         scenes = new ArrayList<>();
-        scenes.add(new SceneManager("dialogue/scene1.txt", "scenes/pavillion.png"));
-        scenes.add(new SceneManager("dialogue/scene2.txt", "scenes/throneroom.png"));
-        scenes.add(new SceneManager("dialogue/scene3.txt", "scenes/courtyard.png"));
+        scenes.add(new SceneManager("dialogue/intro.txt", "scenes/intro.png"));
+        scenes.add(new SceneManager("dialogue/scene1.txt", "scenes/changan.png"));
+        scenes.add(new SceneManager("dialogue/scene2.txt", "scenes/pavillion.png"));
+        scenes.add(new SceneManager("dialogue/scene3.txt", "scenes/throneroom.png"));
+        scenes.add(new SceneManager("dialogue/scene4.txt", "scenes/chamber.png"));
         scenes.add(new CombatScene("scenes/courtyardbirdseye.png"));
+        scenes.add(new SceneManager("dialogue/scene5.txt", "scenes/bedroom.png"));
+        scenes.add(new SceneManager("dialogue/scene6.txt", "scenes/epilogue1.png"));
+        scenes.add(new SceneManager("dialogue/scene7.txt", "scenes/epilogue2.png"));
+        scenes.add(new SceneManager("dialogue/ending.txt", "scenes/epilogue2.png"));
         currentSceneIndex = 0;
         scenes.get(currentSceneIndex).setUpScene(this); 
         textSize(24);
@@ -41,9 +47,7 @@ public class MySketch extends PApplet {
             if (currentSceneIndex < scenes.size()) {
                 scenes.get(currentSceneIndex).setUpScene(this);
             } else {
-                // End of game or loop back
-                currentSceneIndex = 0;
-                scenes.get(currentSceneIndex).setUpScene(this);
+                exit();
             }
         } else {
             currentScene.nextDialogue();

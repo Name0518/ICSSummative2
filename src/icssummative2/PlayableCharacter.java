@@ -9,6 +9,7 @@ public class PlayableCharacter {
     private int speed;
     private int health;
     private int width, height;
+    private PApplet app;
     private PImage sprite;
 
     public PlayableCharacter(int x, int y, int width, int height, String spritePath, PApplet app) {
@@ -18,6 +19,7 @@ public class PlayableCharacter {
         this.health = 100;
         this.width = width;
         this.height = height;
+        this.app = app;
         this.sprite = app.loadImage(spritePath);
     }
 
@@ -52,6 +54,10 @@ public class PlayableCharacter {
     
     public int getHealth(){
         return health;
+    }
+    
+    public void setSprite(PImage sprite){
+        this.sprite = sprite;
     }
     
     public void attackEnemies(ArrayList<Enemy> enemies) {
