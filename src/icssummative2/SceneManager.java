@@ -14,16 +14,29 @@ public class SceneManager {
     private int currentIndex = 0;
     private PImage backgroundImg;
     
+    /**
+     * Constructs a SceneManager with dialogue and background
+     * @param filePath Path to dialogue file
+     * @param backgroundPath Path to background image
+     */
     public SceneManager(String filePath, String backgroundPath) {
         FILE_PATH = filePath;
         BACKGROUND_PATH = backgroundPath;
     }
     
+    /**
+     * Constructs a SceneManager with just a background and a default empty dialogue file.
+     * @param backgroundPath Path to background image
+     */
     public SceneManager(String backgroundPath) {
         FILE_PATH = "scenes/blank.txt";
         BACKGROUND_PATH = backgroundPath;
     }
 
+    /**
+     * Returns the current line of dialogue.
+     * @return DialogueManager object representing the current line
+     */
     public DialogueManager getCurrentDialogue() {
         if (currentIndex >= 0 && currentIndex < dialogueLines.size()) {
             return dialogueLines.get(currentIndex);
@@ -31,6 +44,10 @@ public class SceneManager {
         return null;
     }
 
+    /**
+     * Loads dialogue lines from the file, splitting by speaker and line
+     * Uses EmphasizedLine for key characters.
+     */
     public void loadDialogueFromFile() {
         dialogueLines = new ArrayList<>();
         try {
@@ -52,16 +69,27 @@ public class SceneManager {
         }
     }
 
+    /**
+     * Moves to the next dialogue line
+     */
     public void nextDialogue() {
         currentIndex++;
     }
 
+    /**
+     * Loads the background and dialogue file for this scene
+     * @param sketch The PApplet used for rendering and loading images
+     */
     public void setUpScene(PApplet sketch) {
         currentIndex = 0;
         loadDialogueFromFile();
         backgroundImg = sketch.loadImage(BACKGROUND_PATH);
     }
 
+    /**
+     * Draws the background and current dialogue line to the screen
+     * @param sketch The PApplet used for rendering
+     */
     public void playScene(PApplet sketch) {
         sketch.image(backgroundImg, 0, 0, sketch.width, sketch.height);
 
@@ -78,10 +106,19 @@ public class SceneManager {
         }
     }
     
+    /**
+     * Checks if all dialogue lines have been displayed
+     * @return true if the scene is done, false otherwise
+     */
     public boolean isFinished() {
         return currentIndex >= dialogueLines.size();
     }
     
+     /**
+     * Displays the given dialogue line on screen.
+     * @param line can be DialogueManager or EmphasizedLine
+     * @param sketch PApplet used for drawing
+     */
     public void showDialogue(DialogueManager line, PApplet sketch){
         line.display(sketch, 210, 600);
     }
