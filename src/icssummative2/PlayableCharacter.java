@@ -109,12 +109,12 @@ public class PlayableCharacter {
     for (Enemy enemy : enemies) {
         if (enemy.isAlive()) {
             // Calculate distance between this character and the enemy
-            float dx = enemy.getX() - this.x;
-            float dy = enemy.getY() - this.y;
-            float distance = (float) Math.sqrt(dx * dx + dy * dy);
+            double dx = enemy.getX() - this.x;
+            double dy = enemy.getY() - this.y;
+            double distance = Math.sqrt(dx * dx + dy * dy);
 
              // If enemy is within range, apply damage
-            if (distance < attackRange) {
+            if (distance <= attackRange) {
                 enemy.takeDamage(20); 
             }
         }

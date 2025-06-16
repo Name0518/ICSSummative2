@@ -8,9 +8,9 @@ public class Enemy {
     private int width, height;
     private int health;
     private int damage;
-    private float attackSpeed; // attacks per second
+    private double attackSpeed; // attacks per second
     private int attackRange;
-    private long lastAttackTime;
+    private double lastAttackTime;
     private PImage sprite;
     public static int enemyCount;
     
